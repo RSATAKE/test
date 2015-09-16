@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                 int red = (pixels[i] & 0x00FF0000) >> 16;
                 int green = (pixels[i] & 0x0000FF00) >> 8;
                 int blue = (pixels[i] & 0x000000FF);
-                if(red >=150 && green >= 200 && blue >= 0){
+                if(red >=255){
                     pixels[i]= Color.BLUE;
                 }
                 if(red >=255 && green >= 255 && blue >= 255){
