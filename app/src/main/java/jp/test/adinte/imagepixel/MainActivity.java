@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
             super(context);
 
             // リソースから Bitmap を取得
-            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.test);
+            bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iro);
 
             // もし編集不可なら、編集可能な Bitmap を複製
             if (!bitmap.isMutable()) {
@@ -42,9 +42,19 @@ public class MainActivity extends Activity {
                 int red = (pixels[i] & 0x00FF0000) >> 16;
                 int green = (pixels[i] & 0x0000FF00) >> 8;
                 int blue = (pixels[i] & 0x000000FF);
+                // 赤を青にする
                 if(red >=255){
                     pixels[i]= Color.BLUE;
                 }
+                // 緑を赤にする
+                if(green >=255){
+                    pixels[i]= Color.RED;
+                }
+                // 青を緑にする
+                if(blue >=255){
+                    pixels[i]= Color.GREEN;
+                }
+                // 白はそのまま
                 if(red >=255 && green >= 255 && blue >= 255){
                     pixels[i]= Color.WHITE;
                 }
